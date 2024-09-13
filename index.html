@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mon étoile de vie est une application intuitive et spirituelle conçue pour calculer le chiffre mystique d'un individu à partir de son prénom et de celui de sa mère. En utilisant ces informations, l'application détermine l'étoile correspondante (Feu, Terre, Air, ou Eau) et fournit une interprétation personnalisée, comprenant le chiffre mystique, le symbolisme, et la tradition spirituelle associée à cette étoile.">
+    <title>Mon Etoile de Vie</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body id="body">
+    <header>
+        <div class="toggle-switch">
+            <input type="checkbox" id="toggle-btn" />
+            <label for="toggle-btn" class="switch"></label>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="title">
+            <h1>&#11088;&#11088;&#11088; mon étoile de vie &#11088;&#11088;&#11088;</h1>
+            <p>Votre boussole pour une vie enrichissante et harmonieuse.</p>
+        </div>
+        <!--Start Form -->
+        <form action="" class="form">
+            <div>
+                <input type="text" id="child_name" placeholder="Saisir votre/vos prénom(s) ">
+                <small></small>
+            </div>
+            <div>
+                <input type="text" id="mother_name" placeholder="Saisir le/les prénom(s) de votre mère">
+                <small></small>
+            </div>
+            
+            <button type="submit">dévoiler mon étoile</button>
+        </form>
+        <!--End Form -->
+
+        <!--Start Popup -->
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <span class="close" id="close-popup">&times;</span>
+                <h1>&#11088;&#11088;&#11088; mon étoile de vie &#11088;&#11088;&#11088;</h1>
+            
+                <table>
+                    <thead>
+                        <th>Etoile</th>
+                        <th>Chiffre mystique</th>
+                        <th>Symbolisme</th>
+                        <th>Traditions spirituelles</th>
+                    </thead>
+                    <tbody>
+                        <tr class="box-element"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--End Form -->
+    </main>
+
+    <footer>
+        <p>&copy; Tout droit réservé 2024, Créer et désigner par SMH-Software </p>
+    </footer>
+
+
+    
+    <script src="./assets/js/script.js" type="module" defer></script>
+    <script src="./assets/js/theme.js" type="module"></script>
+</body>
+</html>

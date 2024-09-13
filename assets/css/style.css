@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --btn-bg-color: #f0f0f0;
+    --btn-text-color: #333;
+    --toggle-bg: #4d4d4d;
+    --toggle-circle: #ffffff;
+    --is-valid-color: #FF0000;
+    --popup-text-color : black;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --btn-bg-color: #333;
+    --btn-text-color: #f0f0f0;
+    --toggle-bg: #ffffff;
+    --toggle-circle: #000000;
+    --is-valid-color: #ffffff;
+    --popup-text-color : black;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 10px 0 0;
+}
+
+/* Toglle Section */
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    display: inline-block;
+}
+
+#toggle-btn {
+    display: none;
+}
+
+.switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--toggle-bg);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s;
+}
+
+.switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--toggle-circle);
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#toggle-btn:checked + .switch::after {
+    transform: translateX(30px);
+}
+/* End toggle section */
+
+main{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+.title {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+.title h1{
+    font-size: 2.1em;
+    font-family: "Playwrite CU", cursive;
+    text-transform: capitalize;
+}
+.title p{
+    margin-top: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+input{
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+}
+
+input:focus{
+   outline: none;
+}
+
+button {
+    margin-top: 30px;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid var(--text-color);
+    border-radius: 30px;
+    text-transform: uppercase;  
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+#toggle-theme {
+    margin-top: 0;
+    border: none;
+    padding: 10;
+    border-radius: 10px;
+    text-transform: unset; 
+}
+
+.is_invalid {
+   color: var(--is-valid-color);
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent /* rgba(0, 0, 0, 0.7) */;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevents interaction */
+    transition: opacity 0.3s linear, visibility 0.3s linear; /* Smooth transition */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    color: var(--popup-text-color);
+    border: 1px solid silver;
+    border-radius: 8px;
+    width: 630px;
+    text-align: left;
+    position: relative;
+}
+.popup-content h1{
+    font-size: 1.5em;
+    font-family: "Playwrite CU", cursive;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.popup.visible {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Interaction allowed */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+table thead{
+    border-top: 2px solid silver;
+    border-bottom: 2px solid silver;
+    text-align: center;
+    
+}
+table thead th{
+    padding: 15px;  
+}
+
+table tbody tr td {
+    text-align: justify;
+    padding: 20px;
+}
+table tbody tr td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+}
+table tbody tr td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+}
+/*End Popup*/
+
+
+footer p{
+    text-align: center;
+}
+
+/* Styles spécifiques pour les téléphones */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Réduire la taille de la police pour les petits écrans */
+    }
+
+    .header {
+        font-size: 18px; /* Ajuster la taille des titres */
+        text-align: center; /* Centrer les titres */
+    }
+    .title h1{
+        font-size: 1.3em;
+    }
+    .title p{
+        font-size: auto;
+    }
+    
+    .popup-content h1{
+        font-size: 1.2em;
+    }
+    .button {
+        width: 100%; /* Faire en sorte que les boutons prennent toute la largeur */
+        padding: 15px; /* Ajuster le padding pour une meilleure expérience utilisateur */
+    }
+}
