@@ -158,7 +158,7 @@ export const showData = (value, data, boxElement) => {
     }
 
     if ((value == 0) || (value == 4) || (value == 8) || (value == 12)){
-        img.src = "./assets/images/feu.png"
+        img.src = "./assets/images/eau.png"
         etoile.appendChild(img)
         chiffre.innerText = value
         symbolisme.innerText = data[3].symbolisme
